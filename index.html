@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Map</title>
+
+    <!-- ? Map Link -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <!-- * Fav Icon -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+
+    <!-- * Bootstrap Icon CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- * Css Link -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- * Map -->
+    <div id="map"></div>
+
+    <!-- * Aside -->
+    <aside>
+      <!-- Header -->
+      <header>
+        <h1 id="title">Notlar</h1>
+        <button id="arrow">
+          <i class="bi bi-chevron-down"></i>
+        </button>
+      </header>
+
+      <!-- Form -->
+      <form>
+        <!-- Title -->
+        <div class="field">
+          <label for="title">Başlık *</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Not başlığını giriniz..."
+          />
+          <div id="title-error" class="error-msg"></div>
+        </div>
+
+        <!-- Date -->
+        <div class="field">
+          <label for="date">Tarih *</label>
+          <input type="date" id="title" />
+          <div id="date-error" class="error-msg"></div>
+        </div>
+
+        <!-- Category -->
+        <div class="field">
+          <label for="title">Durum *</label>
+          <select id="status">
+            <option value="" selected disabled>Seçiniz</option>
+            <option value="visit">Ziyaret</option>
+            <option value="park">Park Yeri</option>
+            <option value="home">Ev</option>
+            <option value="job">İş Yeri</option>
+          </select>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+          <button type="button" id="cancel-btn">İptal</button>
+          <button type="submit">
+            <span>Ekle</span>
+            <i class="bi bi-plus-lg"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- List -->
+      <ul id="note-list">
+        <!-- <li>
+          <div>
+            <h3>Title</h3>
+            <p>date</p>
+            <p class="status">Ziyaret</p>
+          </div>
+          <div class="icons">
+            <i id="fly-btn" class="bi bi-airplane-fill"></i>
+            <i id="trash-btn" class="bi bi-trash"></i>
+          </div>
+        </li> -->
+      </ul>
+    </aside>
+
+    <!-- ? Map Js Connection -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <!-- ? Js Connection -->
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>
