@@ -39,7 +39,7 @@ function loadMap(position) {
   const marker = L.marker(position, {icon: personIcon}).addTo(STATE.map);
 
   // Marker'a popup ekle
-  marker.bindPopup("<b>Buradasın</b><br>");
+  marker.bindPopup("<b>Buradasın</b>");
 
   // Haritaya tıklama olayını için izleyici ekle
   STATE.map.on("click", onMapClick);
@@ -84,7 +84,7 @@ ui.form.addEventListener("submit", (e) => {
 
   // Eğer form doldurulmadıysa kullanıcıya uyarı ver
   if (!title || !date || !status) {
-    return alert("Lütfen formu doldurunuz");
+    return alert("Lütfen formu doldurunuz!");
   }
 
   // Kaydedilecek nesneyi oluştur
@@ -141,13 +141,14 @@ function renderNoteCards(notes) {
             <p class="status">${getStatus(note.status)}</p>
           </div>
           <div class="icons">
-            <i data-id=${note.id} id="fly-btn" class="bi bi-airplane-fill"></i>
-            <i data-id=${note.id} id="trash-btn" class="bi bi-trash"></i>
+            <i data-id="${
+              note.id
+            }" id="fly-btn" class="bi bi-airplane-fill"></i>
+            <i data-id="${note.id}" id="trash-btn" class="bi bi-trash"></i>
           </div>
-        </li>
-  `
+        </li> `
     )
-    .join("");
+    .join(" ");
 
   // Oluşturulan ntoe elemanlarını ekrana bas
   ui.noteList.innerHTML = notesHtml;
@@ -171,7 +172,7 @@ function renderNoteCards(notes) {
 // Notu silen bu fonksiyon
 const deleteNote = (id) => {
   // Kullanıcıda silme onayı al
-  if (!confirm("Notu silmek istediğinizden")) return;
+  if (!confirm("Notu silmek istediğinizden emin misiniz?")) return;
 
   // ID' si bilinen notu kaldır
   STATE.notes = STATE.notes.filter((note) => note.id !== id);
