@@ -132,7 +132,7 @@ aside {
 }
 
 aside:hover {
-  background-color: var(--background-overlay-hover);
+  background: var(--background-overlay-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -144,8 +144,8 @@ aside header {
   align-items: center;
   justify-content: center;
   background: var(--card-background);
-  padding: 20px 20px;
-  margin: 24px 24px 10px 24px;
+  padding: 16px 20px;
+  margin: 24px 24px 0 24px;
   border-radius: var(--border-radius);
   border: var(--border);
   letter-spacing: 2px;
@@ -159,8 +159,8 @@ aside header h1 {
   font-weight: 600;
   background: linear-gradient(135deg, #60a5fa, #34d399);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 aside header button {
@@ -234,8 +234,8 @@ aside form {
       margin-top: 4px;
       padding: 4px 8px;
       border-radius: 4px;
-      background-color: rgba(2239, 68, 68, 0.1);
-      border: 1px solid rgba(2239, 68, 68, 0.2);
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
       display: none;
 
       &.show {
@@ -264,8 +264,7 @@ aside form {
     button[type="submit"] {
       background: linear-gradient(
         135deg,
-        var(--primary-color),
-        var(--accent-color)
+        var(--primary-color, var(--accent-color))
       );
       color: white;
       display: flex;
@@ -321,7 +320,6 @@ aside ul {
     transition: all 0.3s;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
 
     &:hover {
       transform: translateY(-2px);
@@ -373,7 +371,7 @@ aside ul {
         font-size: 16px;
         padding: 8px;
         border-radius: 8px;
-        transition: all 0.3;
+        transition: all 0.3s;
         color: #94a3b8;
         background: rgba(255, 255, 255, 0.05);
 
@@ -403,12 +401,12 @@ aside ul {
   aside {
     left: 10px;
     top: 10px;
-    width: calc((100vw - 20px));
+    width: calc(100vw - 20px);
     height: auto;
     border-radius: 12px;
 
     header {
-      margin: 16px 16px 0 16px;
+      margin: 12px 12px 0 12px;
       padding: 12px;
 
       h1 {
@@ -433,7 +431,12 @@ aside ul {
   }
 
   .hide {
-    height: 100px !important;
+    height: 80px !important;
+  }
+
+  i {
+    padding: 12px !important;
+    font-size: 18px !important;
   }
 }
 
@@ -441,7 +444,7 @@ aside ul {
   aside {
     left: 5px;
     top: 5px;
-    width: calc((100vw - 10px));
+    width: calc(100vw - 10px);
 
     header {
       margin: 10px;
@@ -461,12 +464,13 @@ aside ul {
       gap: 12px;
 
       .status {
+        width: 100% !important;
         text-align: center;
       }
     }
 
     .icons {
-      gap: 30px !important;
+      gap: 20px !important;
     }
   }
 }
